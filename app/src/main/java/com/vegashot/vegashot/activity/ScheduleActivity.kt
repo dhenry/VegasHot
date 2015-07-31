@@ -71,10 +71,8 @@ public class ScheduleActivity : Activity() {
             val listView = ListView(this)
             val headerView = getLayoutInflater().inflate(R.layout.daily_schedule_header, listView, false) as ViewGroup
 
-            val title = headerView.findViewById(R.id.header_title)
-            if (title is TextView) {
-                title.setText(dailySchedule.date)
-            }
+            val title: TextView? = headerView.findViewById(R.id.header_title) as? TextView
+            title?.setText(dailySchedule.date)
 
             listView.setAdapter(DailyScheduleAdapter(dailySchedule, this@ScheduleActivity))
             listView.addHeaderView(headerView)
@@ -136,20 +134,14 @@ public class ScheduleActivity : Activity() {
 
             val clazz = getItem(position)
 
-            val time = returnView.findViewById(R.id.time)
-            if (time is TextView) {
-                time.setText(clazz.time)
-            }
+            val time: TextView? = returnView.findViewById(R.id.time) as? TextView
+            time?.setText(clazz.time)
 
-            val name = returnView.findViewById(R.id.name)
-            if (name is TextView) {
-                name.setText(clazz.name)
-            }
+            val name: TextView? = returnView.findViewById(R.id.name) as? TextView
+            name?.setText(clazz.name)
 
-            val instructor = returnView.findViewById(R.id.instructor)
-            if (instructor is TextView) {
-                instructor.setText(clazz.instructor)
-            }
+            val instructor: TextView? = returnView.findViewById(R.id.instructor) as? TextView
+            instructor?.setText(clazz.instructor)
 
             return returnView
         }
