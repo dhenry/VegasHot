@@ -50,8 +50,8 @@ public class ScheduleActivity : Activity() {
         }
     }
 
-    private inner class DownloadFilesTask : AsyncTask<String, Int, ClassSchedule>() {
-        override fun doInBackground(vararg params: String): ClassSchedule {
+    private inner class DownloadFilesTask : AsyncTask<String, Int, ClassSchedule?>() {
+        override fun doInBackground(vararg params: String): ClassSchedule? {
             return VegasHotHttpClient().getClassSchedule()
         }
 
