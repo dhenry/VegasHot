@@ -85,12 +85,12 @@ public class ScheduleActivity extends Activity {
 
         Vector<View> pages = new Vector<>();
 
-        for (DailySchedule dailySchedule : schedule.dailySchedules) {
+        for (DailySchedule dailySchedule : schedule.getDailySchedules()) {
             ListView listView = new ListView(this);
             ViewGroup headerView = (ViewGroup) getLayoutInflater().inflate(R.layout.daily_schedule_header, listView, false);
             HeaderViewHolder holder = new HeaderViewHolder(headerView);
 
-            holder.title.setText(dailySchedule.date);
+            holder.title.setText(dailySchedule.getDate());
 
             listView.setAdapter(new DailyScheduleAdapter(dailySchedule, ScheduleActivity.this));
             listView.addHeaderView(headerView);
@@ -173,9 +173,9 @@ public class ScheduleActivity extends Activity {
 
             final Clazz clazz = getItem(position);
 
-            holder.time.setText(clazz.time);
-            holder.name.setText(clazz.name);
-            holder.instructor.setText(clazz.instructor);
+            holder.time.setText(clazz.getTime());
+            holder.name.setText(clazz.getName());
+            holder.instructor.setText(clazz.getInstructor());
 
             return view;
         }

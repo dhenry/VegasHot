@@ -29,7 +29,7 @@ public class JsoupScraper implements HtmlScraper {
             List<DailySchedule> dailySchedules = new ArrayList<>();
 
             for (Element element : dateHeaders) {
-                dailySchedules.add(new DailySchedule(element.select(".title_date").text()));
+                dailySchedules.add(new DailySchedule(element.select(".title_date").text(), new ArrayList<Clazz>()));
             }
 
             // get the schedule for each day
