@@ -37,6 +37,6 @@ dependencies {
     compile 'com.android.support:appcompat-v7:22.2.1'
     compile 'org.jsoup:jsoup:1.8.2'
     compile 'com.squareup.okhttp:okhttp:2.4.0'
-    compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'com.jakewharton:kotterknife:0.1.0-SNAPSHOT'
     compile 'org.jetbrains.kotlin:kotlin-stdlib:0.12.1230'
 }
